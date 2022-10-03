@@ -1,0 +1,87 @@
+.product-card {
+  padding: 5.625rem 2.9375rem;
+  display: flex;
+}
+.product-card .product-card-images .main-img {
+  max-width: 27.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 1rem;
+  margin-bottom: 1.875rem;
+}
+.product-card .product-card-images .thumbnails-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+}
+.product-card .product-card-images .thumbnails-section img {
+  max-width: 5.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0.7rem;
+}
+.product-card .product-card-text {
+  padding: 4rem 0rem;
+  margin-left: 8rem;
+}
+.product-card .product-card-text .company {
+  color: hsl(26deg, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+.product-card .product-card-text h1 {
+  font-size: 2.8rem;
+  line-height: 3rem;
+  margin-bottom: 2.2rem;
+}
+.product-card .product-card-text p {
+  color: hsl(219deg, 9%, 45%);
+  line-height: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+.product-card .product-card-text .product-card-prices {
+  display: flex;
+  flex-direction: column;
+}
+.product-card .product-card-text .product-card-prices .flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+.product-card .product-card-text .product-card-prices .flex-container .product-card-price {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+.product-card .product-card-text .product-card-prices .flex-container .product-card-discount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.2rem 0.5rem;
+  color: hsl(26deg, 100%, 55%);
+  font-weight: 700;
+  background: hsl(25deg, 100%, 94%);
+  border-radius: 0.3rem;
+}
+.product-card .product-card-text .product-card-prices .product-card-oryginal-price {
+  color: hsl(220deg, 14%, 75%);
+  font-weight: 700;
+  text-decoration: line-through;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=product-card.css.map */

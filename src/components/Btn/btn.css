@@ -1,0 +1,15 @@
+.Btn {
+  background: hsl(26deg, 100%, 55%);
+  width: 19.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.Btn h3 {
+  width: 100%;
+  color: hsl(0deg, 0%, 100%);
+  font-size: medium;
+  text-align: center;
+}/*# sourceMappingURL=btn.css.map */
