@@ -4,6 +4,7 @@
   height: 3.5rem;
   border-radius: 0.5rem;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: auto;
 }
@@ -12,4 +13,7 @@
   color: hsl(0deg, 0%, 100%);
   font-size: medium;
   text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=btn.css.map */

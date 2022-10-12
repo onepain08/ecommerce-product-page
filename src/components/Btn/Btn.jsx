@@ -12,7 +12,8 @@ import './btn.css';
 const Btn = (props) => {
 
   return (
-    <div className='Btn'>
+    <div className='Btn' onClick={() => props.onClick(props.cardId)}>
+      <img src={props.image} alt="" />
         <h3>
             {props.text}
         </h3>
