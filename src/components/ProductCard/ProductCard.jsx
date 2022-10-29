@@ -1,36 +1,68 @@
 import { AnimatePresence } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import './product-card.css'
 
-import { Btn } from "../componentsIndex";
+import { Btn, Lightbox } from "../componentsIndex";
 import { iconCart, iconMinus, iconPlus } from '../../assets/assetsIndex';
 
 const ProductCard = (props) => {
 
+    const imagesArray =[props.image1, props.image2, props.image3, props.image4]
+    const [imgIndex, setImgIndex] = React.useState(0)
+    const [lightboxState, setLightboxState] = React.useState(false)
+    const [currentImage, setCurrentImage] = React.useState(imagesArray[0])
 
-    // const [userItemQuantity, setUserItemQuantity] = React.useState(0)
+    function setIndex(index){
+        setImgIndex(index)
+    }
+    function changeMainImg(){
+        setCurrentImage(imagesArray[imgIndex])
+    }
 
+    function nextImage(){
+        setImgIndex(prevIndex => prevIndex < imagesArray.length - 1 ? prevIndex +1: 0 )
+    }
 
-    // function subtractQuantity(){
-    //     setUserItemQuantity(prevUserItemQuantity => prevUserItemQuantity > 0 ? prevUserItemQuantity - 1: prevUserItemQuantity)
-    // }
-
-    // function addQuantity(){
-    //     setUserItemQuantity(prevUserItemQuantity => prevUserItemQuantity < 99 ? prevUserItemQuantity + 1: prevUserItemQuantity)
-    // }
-
-
-
+    function previousImage(){
+        setImgIndex(prevIndex => prevIndex === 0 ? imagesArray.length -1: prevIndex - 1 )
+    }
+    
+    function lightboxToggle(){
+        setLightboxState(prevlightboxState => !prevlightboxState)
+    }
+    
+    useEffect(() =>{
+        changeMainImg()
+    },[imgIndex])
+    
   return (
     <AnimatePresence>
         <div className='product-card' id={props.id}>
+
+            {(lightboxState || (props.mobileState < 801) ? true : false) &&<Lightbox 
+                image1={props.image1}
+                image2={props.image2}
+                image3={props.image3}
+                image4={props.image4}
+                thumbnail1={props.thumbnail1}
+                thumbnail2={props.thumbnail2}
+                thumbnail3={props.thumbnail3}
+                thumbnail4={props.thumbnail4}
+                currentImage={currentImage}
+                nextImage={nextImage}
+                previousImage={previousImage}
+                setIndex={setIndex}
+                lightboxToggle={lightboxToggle}
+            />}
+
             <div className="product-card-images">
-                <img src={props.image1} alt="" className="main-img" />
+                <img src={currentImage} alt="" className="main-img" onClick={lightboxToggle} />
                 <div className="thumbnails-section">
-                    <img src={props.thumbnail1} alt="" />
-                    <img src={props.thumbnail2} alt="" />
-                    <img src={props.thumbnail3} alt="" />
-                    <img src={props.thumbnail4} alt="" />
+                    {/* <div className="thumbnail-underlay"></div> */}
+                    <img src={props.thumbnail1} alt="" onClick={()=> setIndex(0)} />
+                    <img src={props.thumbnail2} alt="" onClick={()=> setIndex(1)} />
+                    <img src={props.thumbnail3} alt="" onClick={()=> setIndex(2)} />
+                    <img src={props.thumbnail4} alt="" onClick={()=> setIndex(3)} />
                 </div>
             </div>
             <div className="product-card-text">

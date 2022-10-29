@@ -14,7 +14,7 @@ export default [
         image3:imageProduct3,
         image4:imageProduct4,
         title:'Fall Limited Edition Sneakers',
-        description:"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubbrer outer sole, they'll withistand everything the weather can offer.",
+        description:"These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
         uPrice:250,
         discount:50,
         quantity:0,

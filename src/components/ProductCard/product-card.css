@@ -1,6 +1,7 @@
 .product-card {
   padding: 5.625rem 2.9375rem;
   display: flex;
+  max-width: 90rem;
 }
 .product-card .product-card-images .main-img {
   max-width: 27.75rem;
@@ -10,12 +11,13 @@
      object-position: center;
   border-radius: 1rem;
   margin-bottom: 1.875rem;
+  cursor: pointer;
 }
 .product-card .product-card-images .thumbnails-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.875rem;
+  gap: 1.775rem;
 }
 .product-card .product-card-images .thumbnails-section img {
   max-width: 5.5rem;
@@ -24,6 +26,11 @@
   -o-object-position: center;
      object-position: center;
   border-radius: 0.7rem;
+  border: solid 2px transparent;
+}
+.product-card .product-card-images .thumbnails-section img:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+  opacity: 30%;
 }
 .product-card .product-card-text {
   padding: 4rem 0rem;
@@ -126,4 +133,122 @@
   filter: brightness(0) invert(1);
   margin-right: 1rem;
   scale: 0.8;
+}
+
+@media (max-width: 1200px) {
+  .product-card {
+    padding: 5.625rem 0;
+    max-width: 50rem;
+    margin: auto;
+  }
+}
+@media (max-width: 800px) {
+  .product-card {
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  .product-card .product-card-images {
+    display: none;
+  }
+  .product-card .product-card-images .thumbnails-section {
+    display: none;
+  }
+  .product-card .product-card-text {
+    padding: 1.5rem 1.5rem;
+    margin-left: 0rem;
+    max-width: 30rem;
+    margin: auto;
+  }
+  .product-card .product-card-text .company {
+    color: hsl(26deg, 100%, 55%);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .product-card .product-card-text h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+  .product-card .product-card-text p {
+    color: hsl(219deg, 9%, 45%);
+    line-height: 1.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .product-card .product-card-text .product-card-prices {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 1.7rem;
+    max-width: 25rem;
+  }
+  .product-card .product-card-text .product-card-prices .flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0rem;
+  }
+  .product-card .product-card-text .product-card-prices .flex-container .product-card-price {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  .product-card .product-card-text .product-card-prices .flex-container .product-card-discount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0.2rem 0.5rem;
+    color: hsl(26deg, 100%, 55%);
+    font-weight: 700;
+    background: hsl(25deg, 100%, 94%);
+    border-radius: 0.3rem;
+  }
+  .product-card .product-card-text .product-card-prices .product-card-oryginal-price {
+    color: hsl(220deg, 14%, 75%);
+    font-weight: 700;
+    text-decoration: line-through;
+    margin-bottom: 0rem;
+    margin-left: auto;
+    text-align: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .product-card .product-card-text .product-card-user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 31rem;
+  }
+  .product-card .product-card-text .product-card-user-input .user-input-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 25rem;
+    height: 3.5rem;
+    background-color: hsl(223deg, 64%, 98%);
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .product-card .product-card-text .product-card-user-input .Btn {
+    width: 100%;
+    max-width: 25rem;
+    box-shadow: 0 20px 30px 20px hsl(25deg, 100%, 94%);
+  }
 }/*# sourceMappingURL=product-card.css.map */

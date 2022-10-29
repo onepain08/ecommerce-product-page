@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './app.css'
 
-import { imageProduct1Thumbnail } from './assets/assetsIndex'
+// import { imageProduct1Thumbnail } from './assets/assetsIndex'
 import { ProductCard } from './components/componentsIndex'
 import { Navbar } from './containers/containersIndex'
 import productsData from './products/productsData'
@@ -15,6 +15,21 @@ const App = () => {
   const [cartItemListData, setCartItemListData] = React.useState([])
 
   const [cartItemCounter, setCartItemCounter] = React.useState(0)
+
+  const [mobileState, setMobileState] = React.useState(window.innerWidth)
+
+
+
+  useEffect(() => {
+    function handleResize(){
+      setMobileState(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => window.removeEventListener('resize', handleResize)
+  },[mobileState])
+
 
   const productCards = productsData.map(product => {
     return(
@@ -34,6 +49,7 @@ const App = () => {
         uPrice={product.uPrice}
         discount={product.discount}
         quantity={product.quantity}
+        mobileState={mobileState}
         addToCart={addToCart}
         userItemQuantity={userItemQuantity}
         subtractQuantity={subtractQuantity}
@@ -59,25 +75,23 @@ const App = () => {
 
       setCartItemListData(prevcartItemListData => [...prevcartItemListData,cardToBeAdded[0]]
         )
-      //reset userItemQuantity state after item was added to cart
-      resetQuantity()
+      
     }
 
       else if(exists === true && userItemQuantity >0){
-        // setCartItemListData(cartItemListData => cartItemListData[0].quantity = 9 )
         //Create array of id's of items in the cart
         const cartItemsIds = cartItemListData.map(item => item.id)
         const itemIndex = cartItemsIds.findIndex(item => item === id)
         const slicedOutItem = cartItemListData.slice(itemIndex)[0]
         const updatedItem = {...slicedOutItem, quantity:slicedOutItem.quantity + userItemQuantity} 
         //item removed from cart and added later on with new quantity value
-        // const transitionCart = cartItemListData.splice(itemIndex + 1, 1,)
-        // setCartItemListData(() =>[...transitionCart, updatedItem])
         setCartItemListData(prevcartItemListData => {
           prevcartItemListData.splice(itemIndex, 1)
           return [...prevcartItemListData, updatedItem]
         })
       }
+      //reset userItemQuantity state after item was added to cart
+      resetQuantity()
     }
 
   
@@ -113,6 +127,7 @@ const App = () => {
 
       setCartItemListData(prevcartItemListData => {
         prevcartItemListData.splice(indexOfItem, 1)
+        console.log(prevcartItemListData.splice(indexOfItem, 1))
         return prevcartItemListData
       })
     }
@@ -120,7 +135,7 @@ const App = () => {
 
   return (
     <div className='app' onClick={countItemsInCart}>
-        <Navbar cartList={cartItemListData} cartItemCounter={cartItemCounter} removeCartItem={removeCartItem} />
+        <Navbar cartList={cartItemListData} cartItemCounter={cartItemCounter} mobile={mobileState} removeCartItem={removeCartItem} />
         {productCards}
     </div>
   )

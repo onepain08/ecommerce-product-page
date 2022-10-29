@@ -1,0 +1,174 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.676);
+}
+.lightbox .lightbox-content {
+  position: relative;
+  top: 4.5rem;
+  transform: translateX(-50%);
+  left: 50%;
+  max-width: 40rem;
+}
+.lightbox .lightbox-content .exit-btn {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+.lightbox .lightbox-content .exit-btn img {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(93%) saturate(429%) hue-rotate(181deg) brightness(115%) contrast(100%);
+  width: 1.3rem;
+  margin-right: 2.7rem;
+  cursor: pointer;
+}
+.lightbox .lightbox-content .exit-btn:hover img {
+  filter: invert(50%) sepia(95%) saturate(1089%) hue-rotate(346deg) brightness(101%) contrast(104%);
+}
+.lightbox .lightbox-content .lightbox-main-img {
+  max-width: 50rem;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.lightbox .lightbox-content .lightbox-main-img img {
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  max-width: 34.375rem;
+  border-radius: 0.7rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.lightbox .lightbox-content .lightbox-main-img .arrows-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  bottom: 19.9rem;
+}
+.lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows {
+  position: relative;
+  background: hsl(0deg, 0%, 100%);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+.lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows img {
+  width: 0.85rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows:hover {
+  cursor: pointer;
+}
+.lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows:hover img {
+  filter: invert(50%) sepia(95%) saturate(1089%) hue-rotate(346deg) brightness(101%) contrast(104%);
+}
+.lightbox .lightbox-content .lightbox-thumbnails {
+  position: relative;
+  top: -1.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+.lightbox .lightbox-content .lightbox-thumbnails img {
+  max-width: 5.8rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0.7rem;
+}
+.lightbox .lightbox-content .lightbox-thumbnails img:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+  opacity: 30%;
+}
+.lightbox .lightbox-content .lightbox-thumbnails .thumbnail-underlay {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0.7rem;
+  max-width: 5.8rem;
+  max-height: 5.8rem;
+}
+.lightbox .lightbox-content .lightbox-thumbnails .thumbnail-underlay:hover {
+  border: solid 2px hsl(26deg, 100%, 55%);
+}
+
+@media (max-width: 800px) {
+  .lightbox {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background: transparent;
+  }
+  .lightbox .lightbox-content {
+    width: 101%;
+    position: relative;
+    top: 0;
+    transform: translateX(0);
+    left: 0;
+    margin: auto;
+  }
+  .lightbox .lightbox-content .exit-btn {
+    display: none;
+  }
+  .lightbox .lightbox-content .lightbox-main-img {
+    width: 100%;
+    height: 33.5vh;
+    padding: 0 0;
+    margin: 0 0;
+  }
+  .lightbox .lightbox-content .lightbox-main-img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .lightbox .lightbox-content .lightbox-main-img .arrows-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  .lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows {
+    position: relative;
+    background: hsl(0deg, 0%, 100%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .lightbox .lightbox-content .lightbox-main-img .arrows-container .arrows img {
+    width: 0.55rem;
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .lightbox .lightbox-content .lightbox-thumbnails {
+    display: none;
+  }
+}/*# sourceMappingURL=lightbox.css.map */

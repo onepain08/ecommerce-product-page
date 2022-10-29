@@ -4,6 +4,7 @@
 .product-card{
     padding: 5.625rem 2.9375rem;
     display: flex;
+    max-width: 90rem;
 
     .product-card-images{
 
@@ -13,21 +14,29 @@
             object-position: center;
             border-radius: 1rem;
             margin-bottom: 1.875rem;
+            cursor: pointer;
         }
 
         .thumbnails-section{
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1.875rem;
+            gap: 1.775rem;
             
             img{
                 max-width: 5.5rem;
                 object-fit: contain;
                 object-position: center;
                 border-radius: 0.7rem;
+                border: solid 2px transparent;
                 
             }
+
+            img:hover{
+                border: solid 2px $orange;
+                opacity: 30%;
+            }
+            
         }
     }
 
@@ -141,5 +150,148 @@
             }
         }
 
+    }
+}
+
+@media(max-width: 1200px){
+
+    .product-card{
+        padding: 5.625rem 0;
+        max-width: 50rem;
+        margin: auto;
+
+
+        // .main-img{
+        //     width: 50%;
+        // }
+
+        // .product-card-text{
+
+        //     padding: 4rem 0rem;
+        //     margin-left: 2rem;
+        //     width: 40%;
+        // }
+    }
+}
+
+@media(max-width: 800px){
+    .product-card{
+        padding: 0 0;
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    
+        .product-card-images{
+            display: none;
+
+            .thumbnails-section{
+                display: none;
+            }
+        }
+    
+        .product-card-text{
+            padding: 1.5rem 1.5rem;
+            margin-left: 0rem;
+            max-width: 30rem;
+            margin: auto;
+    
+            .company{
+                color: $orange;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                letter-spacing: 0.1rem;
+                margin-bottom: 0.8rem;
+            }
+    
+            h1{
+                font-size: 1.80rem;
+                line-height: 2rem;
+                margin-bottom: 1rem;
+            }
+    
+            p{
+                color: $dark-grayish-blue;
+                line-height: 1.5rem;
+                font-size: 0.95rem;
+                margin-bottom:  1.5rem;
+            }
+    
+            .product-card-prices{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: auto;
+                margin-bottom: 1.7rem;
+                max-width: 25rem;
+    
+                .flex-container{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-bottom: 0rem;
+    
+                    .product-card-price{
+                     width: fit-content;
+                     font-size: 1.8rem;
+                     margin-right: 1rem;
+                    }
+                    
+                    .product-card-discount{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 0.2rem 0.5rem;
+                        color: $orange;
+                        font-weight: 700;
+                        background: $pale-orange;
+                        border-radius: 0.3rem;
+                    }
+                }
+    
+                .product-card-oryginal-price{
+                    color: $grayish-blue;
+                    font-weight: 700;
+                    text-decoration: line-through;
+                    margin-bottom: 0rem;
+                    margin-left: auto;
+                    text-align: center;
+                    height: fit-content;
+                }
+    
+            }
+    
+            .product-card-user-input{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                max-width: 31rem;
+    
+                .user-input-quantity{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    max-width: 25rem;
+                    height: 3.5rem;
+                    background-color: $light-grayish-blue;
+                    border-radius: 0.5rem;
+                    padding: 0.3rem 0.6rem;
+    
+                    
+                }
+    
+                .Btn{
+                    width: 100%;
+                    max-width: 25rem;
+                    box-shadow: 0 20px 30px 20px $pale-orange;
+                    
+                }
+            }
+    
+        }
     }
 }

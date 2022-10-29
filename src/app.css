@@ -16,4 +16,15 @@ body p {
 .app {
   width: 100%;
   min-height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    padding: 0 0;
+  }
 }/*# sourceMappingURL=app.css.map */
